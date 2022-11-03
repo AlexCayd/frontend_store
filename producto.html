@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrontEnd Store</title>
+    <link rel="stylesheet" href="CSS/normalize.css">        <!--Le decimos a HTML que va a usar el código de Normalize como hoja de estilos e indicamos su ubicación-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="preload" href="CSS/normalize.css" as="style">        <!--Los preloads mejora el rendimiento del sitio web-->       
+    <link rel="preload" href="CSS/styles.css as="style">        <!--También hacemos un preload a nuestra hoja de estilos-->
+    <link href="CSS/styles.css" rel="stylesheet" text="text/css">     <!--Le indicamos la ubicación de nuestra hoja de estilos y la aplicamos-->
+</head>
+<body>
+    <header class="header">
+        <a href="index.html">       <!--Al hacer clic en la imagen nos llevará a index.html-->
+            <img class="header__logo" src="imagenes/logo.png" alt="Logotipo">    <!--El texto alternativo cargará en caso de que haya un error con la imagen-->
+        </a>
+    </header>
+    
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="index.html"> Tienda </a>        <!--# simula un enlace-->
+        <a class="navegacion__enlace" href="nosotros.html"> Nosotros </a>
+    </nav>
+
+    <main class="contenedor">
+        <h1> Vista previa de compra </h1>
+        <div class="camisa">
+            <img class="camisa__imagen" src="/imagenes/camisa.png" alt="Imagen del Producto">
+            <div class="camisa__contenido">
+                <p> Ut posuere dignissim lectus vel luctus. Curabitur mollis facilisis felis id auctor. Nullam et lacinia dolor, eget venenatis sapien. Pellentesque tristique porttitor elit et feugiat. Mauris id arcu rhoncus, mattis est nec, ullamcorper velit. Etiam non leo posuere, imperdiet sapien nec, ullamcorper neque. </p>
+                <form class="formulario">
+                    <select class="formulario__campo">
+                        <option disabled selected>--Seleccionar talla--</option>        <!--Opciones de la lista desplegable-->
+                        <option class="formulario__opciones"> Chica </option>
+                        <option class="formulario__opciones"> Mediana </option>
+                        <option class="formulario__opciones"> Grande </option>
+                    </select">
+                    <input class="formulario__campo" type="number" placeholder="Cantidad" min="1">      <!--Cantidad de camisas-->
+                    <input class="formulario__boton" type="submit" value="Agregar al carrito">          <!--Boton agregar al carrito-->
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto"> Todos los derechos reservados 2022 </p>
+    </footer>
+</body>
+</html>

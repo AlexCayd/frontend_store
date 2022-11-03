@@ -1,0 +1,236 @@
+:root {
+    --primario: #9C27B0;
+    --primarioOscuro: #89119D;
+    --secundario: #FFCE00;
+    --secundarioOscuro: #rgb(237,287,2);
+    --blanco: #FFF;
+    --negro: #000;
+    --fuenteprincipal: 'Staatliches';
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;       /*Regula el tamaño de los rem*/
+    }
+  *, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*Globales*/
+body {
+    background-color: var(--primario);
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-family: var(--fuenteprincipal);
+}
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+a {
+    text-decoration: none;      /*Quita el subrayado predeterminado*/
+}
+img {
+    width: 100%;
+}
+.contenedor {
+    max-width: 110rem;
+    margin: 0 auto;         /*Centra el contenido*/
+}
+h1, h2, h3 {
+    text-align: center;
+    color: var(--secundario);
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.2rem;
+}
+h3 {
+    font-size: 2.4rem;
+}
+
+/*Header*/
+.header {
+    display: flex;                      /*Habilita justify-content*/
+    justify-content: center;            /*Centra el logo*/
+}
+
+.header__logo{
+    margin: 3rem 0;         /*Da un margen entre el logo y la barra de navegación*/
+}
+
+/*Navegación*/
+.navegacion{
+    background-color: var(--primarioOscuro);
+    padding: 1.5rem;
+    display: flex;          /*Habilita justify-content*/
+    justify-content: center;
+    gap: 10rem;         /*Espacio entre los enlaces de la barra de navegación*/
+}
+
+.navegacion__enlace{
+    font-family: var(--fuenteprincipal);
+    color: var(--blanco);
+    font-size: 3rem;
+    /*margin-right: 2rem; En caso de que no funcione gap*/
+}
+
+.navegacion__enlace--activo, .navegacion__enlace:hover {
+    color: var(--secundario);
+}
+
+/*Grid*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));      /*Pone los productos en dos columnas*/
+    column-gap: 2rem;       /*Espacio horizontal entre productos*/
+    row-gap: 2rem;          /*Espacio vertical entre productos*/
+}
+
+/*Producto*/
+.producto{
+    background-color: var(--primarioOscuro);
+    padding: 1rem;      /*La imagen se ve dentro de un contenedor*/
+}
+
+.producto__nombre{
+    font-size: 4rem;
+}
+
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+
+.producto__nombre, .producto__precio{
+    font-family: var(--fuenteprincipal);
+    text-align: center;
+    margin: 0.5rem;
+    line-height: 1.2;
+}
+
+/*Formulario de producto*/
+.formulario{
+    display: grid;
+    gap: 2rem;
+    width: min(60rem, 100%);       /*Asigna el valor más bajo entre los dos parámetros*/
+}
+
+.formulario__campo{
+    border: 1rem solid var(--primarioOscuro);
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: var(--fuenteprincipal);
+    padding: 1rem;
+    appearance: none;       /*Quitamos la flecha de la lista desplegable*/
+    grid-column: 1 / 3;
+}
+
+.formulario__boton{
+    background-color: var(--secundario);
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuenteprincipal);
+    padding: 2rem;
+    transition: background-color 1.5s ease;     /*Animación en el botón*/
+    grid-column: 1 / 3;
+}
+
+.formulario__boton:hover{
+    cursor: pointer;
+    background-color: var(--secundarioOscuro);
+}
+
+.formulario__opciones{
+    color: var(--negro);
+}
+
+/*Gráficos*/
+.grafico{
+    min-height: 30rem;          /*Alto de las imagenes*/
+    background-repeat: no-repeat;       /*No repite las imagenes*/
+    background-size: cover;         /*Estira la imagen para que cubra el espaico del contenedor*/
+}
+
+.grafico--camisas{
+    grid-row: 2 / 3;            /*Coordenadas verticales de la imagen*/
+    grid-column: 1 / 3;         /*Coordenadas horizontalesde la imagen*/
+    background-image: url(../imagenes/grafico1.jpg);
+}
+
+.grafico--node{
+    background-image: url(../imagenes/grafico2.jpg);
+    grid-column: 1 / 3;
+    grid-row: 8 / 9;
+}
+
+/*Nosotros*/
+.nosotros{
+    display: grid;
+    grid-template-rows: repeat(2, auto);        /*Pone el contenido en 2 columnas aprovechando el espacio*/
+}
+
+.nosotros__imagen{
+    grid-row: 1 / 2;            /*En dispositivos móviles coloca la imagen arriba del texto*/
+}
+
+/*Bloques*/
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.bloque{
+    text-align: center;
+}
+
+.bloque__titulo{
+    margin: 0;
+}
+
+/*Footer*/
+.footer{
+    background-color: var(--primarioOscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__texto{
+    font-family: var(--fuenteprincipal);
+    font-size: 2.2rem;
+    text-align: center;
+}
+
+/*Media Querie*/
+@media (min-width: 768px) {
+    .grid{
+        grid-template-columns: repeat(3, 1fr);      /*En computadoras hay 3 columnas de productos*/
+    }
+    .grafico--node{
+    grid-row: 5 / 6;            
+    grid-column: 2 / 4;
+    }
+    .nosotros{
+        grid-template-columns: repeat(2, 1fr);      /*Hace que el contenido esté en 2 columnas*/
+        column-gap: 3.5rem;         /*Coloca espacio entre la imagen y el texto*/
+    }
+    .nosotros__imagen{
+        grid-column: 2 / 3;         /*Pone la imagen a la derecha del texto*/
+    }
+    .bloques{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .camisa{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+    .formulario {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
